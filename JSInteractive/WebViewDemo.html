@@ -1,0 +1,91 @@
+<html>
+<head>
+	<title>webDemo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" charset="utf-8">
+    <style type="text/css">
+        a{
+            font-size:12px;
+            color:red;
+            display:flex;
+            width:33%;
+            height:50px;
+            line-height:50;
+            float:left;
+            text-align:center;
+        }
+    </style>
+<script  type="text/javascript">
+    function test2(){
+        window.test('message1','message2')
+        window.test('message')
+    }
+    function test3(){
+        window.test('message')
+    }
+    function JSObjecNOParameter(){
+        jsObject.JSObjecNOParameter()
+    }
+    function JSObjecOneParameter(){
+<!--        jsObject.JSObjecOneParameter('message')-->
+        jsObject.JSObjecOneParameter({title:'title',content:'content'})
+    }
+    function JSObjecTowParameterSecondParameter(){
+        jsObject.JSObjecTowParameterSecondParameter('firstMessage','SecondParameter')
+    }
+    function WKTest2(){
+        webkit.messageHandlers.test.postMessage('message1','message2')
+        webkit.messageHandlers.test.postMessage('message1')
+    }
+    function WKTest3(){
+        webkit.messageHandlers.test.postMessage({title:'title',content:'content'})
+    }
+    function alertTest(){
+        alert("alert")
+    }
+    function confirmTest(){
+        var result = confirm('是否删除！');
+<!--        if(result){-->
+<!--            alert("删除成功！");-->
+<!--        }else{-->
+<!--            alert("不删除！");-->
+<!--        }-->
+    }
+    function promptTest(){
+        var value = prompt('输入你的名字：', '默认名字');
+<!--        if(value == null){-->
+<!--            alert('你取消了输入！');-->
+<!--        }else if(value == ''){-->
+<!--            alert('姓名输入为空，请重新输入！');-->
+<!--            show_prompt();-->
+<!--        }else{-->
+<!--            alert('你好，'+value);-->
+<!--        }-->
+    }
+</script>
+</head>
+<body>
+    <p>js直接掉方法</p>
+    <div style="height:50px">
+    <button onClick="test2()" style=""> test2</button>
+    <button onClick="test3()" style=""> test</button>
+    </div>
+    <p>js对象调方法</p>
+    <div style="height:70px">
+    <button onClick="JSObjecNOParameter()" style=""> JSObjecNOParameter</button>
+    <button onClick="JSObjecOneParameter()" style=""> JSObjecOneParameter</button>
+        <button onClick="JSObjecTowParameterSecondParameter()" style=""> JSObjecTowParameterSecondParameter</button>
+    </div>
+    <p>wk的js调用</p>
+    <div style="height:50px">
+    <button onClick="WKTest2()" style=""> WKTest2</button>
+    <button onClick="WKTest3()" style=""> WKTest</button>
+    </div>
+    <p>弹窗</p>
+    <div style="height:50px">
+    <button onClick="alertTest()" style="">alertTest</button>
+    <button onClick="confirmTest()" style=""> confirmTest</button>
+    <button onClick="promptTest()" style=""> promptTest</button>
+    </div>
+</body>
+
+</html>
